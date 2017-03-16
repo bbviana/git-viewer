@@ -20,4 +20,10 @@ class RespositoriesAPISpec extends Specification{
         expect:
         println controller.tags("dali")
     }
+
+    def "ls-files"(){
+        expect:
+        println controller.lsFiles("dali", "master").each { println it}
+    }
+
 }
