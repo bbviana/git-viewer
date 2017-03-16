@@ -15,11 +15,13 @@ class RepositoriesController {
 
     @RequestMapping(method = GET, path = "/branches")
     List<String> branches(@PathVariable String name) {
-        return []
+        return "git -C /home/bbviana/workspace/${name} branch".execute().text.readLines().collect{
+            return it.replaceAll("\\*", "").trim()
+        }
     }
 
     @RequestMapping(method = GET, path = "/tags")
     List<String> tags(@PathVariable String name) {
-        return []
+        return "git -C /home/bbviana/workspace/${name} tag".execute().text.readLines()
     }
 }
