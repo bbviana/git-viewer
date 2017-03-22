@@ -23,7 +23,7 @@ class RespositoriesAPISpec extends Specification{
 
     def "ls-files"(){
         expect:
-        println controller.lsFiles("dali", "master").each { println it}
+        println controller.tree("dali", "master").each { println it}
     }
 
 }

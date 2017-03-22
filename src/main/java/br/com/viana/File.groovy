@@ -15,4 +15,6 @@ class File {
     String name
 
     String objectId
+
+    String content
 }
